@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Ronit baby♥️</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Soft pink background + text styling */
         body {
             background-color: #ffe6f0;
             font-family: Arial, sans-serif;
             text-align: center;
             color: #ff3366;
             margin: 0;
-            padding: 0;
-        }
-        .container {
             padding: 50px 20px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
         }
         .buttons button {
             font-size: 20px;
@@ -26,13 +28,17 @@
             border-radius: 10px;
             cursor: pointer;
         }
-        .yes-button {
+        #yesBtn {
             background-color: #ff6699;
             color: white;
         }
-        .no-button {
+        #noBtn {
             background-color: #cccccc;
             color: #333;
+        }
+        .gif_container img {
+            width: 250px;
+            margin-top: 30px;
         }
 
         /* Floating hearts animation */
@@ -43,23 +49,19 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hi baby🥰</h1>
-        <p>You do so much for me and make me smile every day. I may not know Java or Python, but I wanted to do something for you too. Will you be my Valentine?</p>
+    <h1>Hi baby🥰</h1>
+    <p>You do so much for me and make me smile every day. I may not know Java or Python, but I wanted to do something for you too. Will you be my Valentine?</p>
 
-        <div class="buttons">
-            <button class="yes-button" onclick="handleYesClick()">Yes</button>
-            <button class="no-button" onclick="handleNoClick()">No</button>
-        </div>
-
-        <div class="gif_container">
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
-        </div>
+    <div class="buttons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
     </div>
 
-    <script src="script.js"></script>
+    <div class="gif_container">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+    </div>
 
-    <!-- Step 7: Floating hearts -->
+    <!-- Floating hearts -->
     <script>
     for(let i=0;i<30;i++){
       let heart = document.createElement('div');
@@ -73,5 +75,25 @@
     }
     </script>
 
+    <!-- Yes/No button logic -->
+    <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+
+    let yesSize = 20; // initial font size in px
+
+    noBtn.addEventListener('click', () => {
+        yesSize += 5; // grow Yes button
+        yesBtn.style.fontSize = yesSize + 'px';
+        yesBtn.style.transition = 'all 0.2s';
+        yesBtn.style.transform = 'rotate(5deg)';
+        setTimeout(() => yesBtn.style.transform = 'rotate(0deg)', 200);
+    });
+
+    yesBtn.addEventListener('click', () => {
+        // Go to cute page
+        window.location.href = 'cute.html';
+    });
+    </script>
 </body>
 </html>
