@@ -1,43 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine's Day</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <style>
-    .gradient-background {
-      background: linear-gradient(180deg, rgba(255, 208, 229, 1) 0%, rgba(255, 232, 242, 1) 36%, rgba(255, 255, 255, 1) 100%);
-    }
-    .bounce2 {
-      animation: bounce2 2s ease infinite;
-    }
-    @keyframes bounce2 {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-20px); }
-      60% { transform: translateY(-10px); }
-    }
-  </style>
-</head>
-<body class="gradient-background">
-  <div class="flex items-center justify-center h-screen">
-    <div class="flex flex-col items-center p-4 text-center">
-      <img id="imageDisplay" src="./images/image1.gif" alt="Cute dancing duck with hearts" class="rounded-md h-[300px]" style="object-fit: cover;" />
-      <h2 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4 text-center">Will you be my Valentine?</h2>
-      <div class="flex gap-4 pt-[20px] items-center" id="responseButtons">
-        <button id="yesButton"
-          class="bounce2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium hover:bg-green-400 min-h-12 min-w-[75px] px-4 py-2 bg-green-500 text-white transition">
-          Yes
-        </button>
-        <button id="noButton"
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium hover:bg-red-700 h-12 min-w-[75px] w-auto px-4 py-2 bg-red-500 text-white">
-          No
-        </button>
-      </div>
-    </div>
-  </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ronit baby♥️</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Soft pink background + text styling */
+        body {
+            background-color: #ffe6f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #ff3366;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 50px 20px;
+        }
+        .buttons button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .yes-button {
+            background-color: #ff6699;
+            color: white;
+        }
+        .no-button {
+            background-color: #cccccc;
+            color: #333;
+        }
 
-  <script type="module" src="./script.js"></script>
+        /* Floating hearts animation */
+        @keyframes float {
+          0% { transform: translateY(0); opacity: 1; }
+          100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi baby🥰</h1>
+        <p>You do so much for me and make me smile every day. I may not know Java or Python, but I wanted to do something for you too. Will you be my Valentine?</p>
+
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Yes</button>
+            <button class="no-button" onclick="handleNoClick()">No</button>
+        </div>
+
+        <div class="gif_container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Step 7: Floating hearts -->
+    <script>
+    for(let i=0;i<30;i++){
+      let heart = document.createElement('div');
+      heart.innerText = '❤️';
+      heart.style.position = 'absolute';
+      heart.style.left = Math.random()*100+'vw';
+      heart.style.top = Math.random()*100+'vh';
+      heart.style.fontSize = Math.random()*30+20+'px';
+      heart.style.animation = `float ${Math.random()*5+5}s linear infinite`;
+      document.body.appendChild(heart);
+    }
+    </script>
+
 </body>
 </html>
